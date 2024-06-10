@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Website</title>
+
+    <style>
+        .navbar{
+            background-color: black;
+            
+          
+        
+        }
+        .navbar ul{
+           overflow:auto;
+           padding:0px;
+        
+           
+           
+        }
+        .navbar li{
+            float:left;
+            list-style:none; 
+            padding: 10px;
+            color: azure;
+           
+            
+           
+           
+        }
+        .navbar li a{
+            text-decoration: none;
+            color:white;
+            padding:5px 5px;
+            margin:2px 4px
+
+        }
+
+        .navbar li a:hover{
+            color:blue;
+        
+        }
+        .navbar ul input{
+            float:right;
+            margin:8px 8px;
+            border:2px solid black;
+            border-radius: 8px;
+            
+    }
+
+    .container{
+       /* display:grid;*/
+        display:flex;
+        flex-direction: column;
+        height: 400px;
+        width: 500px;
+        margin:auto;
+        
+        margin-top: 100px;
+        background-color: gray;
+       
+
+    }
+    .form{
+       
+        
+        display: inline-block;
+        width:200px;
+        height: 30px;
+        margin:10px;
+       font-size: 20px;
+        
+        border-radius: 4px;
+    }
+
+    .field
+    {
+        font-size: 20px;
+        text-align: center;
+        
+
+    }
+    .btn{
+        width:100px;
+        height:40px;
+        background-color: green;
+        font-size: 20px;
+        
+        margin-top: 20px;
+        margin-left: 45%;
+        border-radius: 10px;
+    }
+    .box
+    {
+       
+        margin-top: 40px;
+    }
+      
+    </style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a ></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <input type="text" class="search" placeholder="search items">
+    </ul>
+</nav>
+<div class="container">
+<div class="box">
+<div class="field">
+<label for="name">name</label>
+<input type="text" class="form" placeholder="entern name" id="form1"/>
+</div>
+<div class="field">
+<label for="e-mail">e-mail</label>
+<input type="e-mail" class="form" placeholder="enter e-mail" id="form2"/>
+</div>
+<div class="field">
+<label for="password">password</label>
+<input type="password" class="form" placeholder="enter pw" id="form3"/>
+</div>
+<div class="field">
+<label for="cpassword">Confirm pasword</label>
+<input type="text" class="form" placeholder="confirm pw" id="form4"/>
+</div>
+<button type="submit" class="btn">Register</button>
+</div>
+</div>
+    
+</body>
+</html>
