@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registration</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
   <header class="navbar">
-    <h1>Intern Management App</h1>
+    <h1>MYAPP</h1>
     <nav>
-      <div class="nav-links">
-       
-        <a href="./register.html">Register</a>
-        <a href="./login.html">Login</a>
-        <a href="./edit_profile.html">Profile</a>
+      <div class="nav-links"> 
+        <a href="./register.html">Register</a> 
+        <a href="./login.html">Login</a> 
+        <a href="./edit_profile.html">Profile</a> 
         <a href="./user_listing.html">Users</a>
       </div>
+
       <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
@@ -27,7 +27,7 @@
   <div class="container">
     <div class="form-container">
       <h2>User Registration</h2>
-      <form id="registration-form">
+      <form id="registration-form" onsubmit="return validateForm()">
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" required>
@@ -53,6 +53,46 @@
       const navLinks = document.querySelector('.nav-links');
       navLinks.classList.toggle('show');
     }
+
+    function validateForm() {
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+
+      if (username === '') {
+        alert('Username is required');
+        return false;
+      }
+
+      if (email === '') {
+        alert('Email is required');
+        return false;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address');
+        return false;
+      }
+
+      if (password === '') {
+        alert('Password is required');
+        return false;
+      }
+
+      if (confirmPassword === '') {
+        alert('Confirm Password is required');
+        return false;
+      }
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return false;
+      }
+
+      return true;
+    }
   </script>
 </body>
 </html>
@@ -70,4 +110,6 @@
                       padding:top r b l;
 
 -->
+
+
 

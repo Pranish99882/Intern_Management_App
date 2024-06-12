@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Listing</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
   <header class="navbar">
-    <h1>Intern Management App</h1>
+    <h1>MYAPP</h1>
     <nav>
-      <div class="nav-links">
-        
-        <a href="./register.html">Register</a>
-        <a href="./login.html">Login</a>
-        <a href="./edit_profile.html">Profile</a>
+      <div class="nav-links"> 
+        <a href="./register.html">Register</a> 
+        <a href="./login.html">Login</a> 
+        <a href="./edit_profile.html">Profile</a> 
         <a href="./user_listing.html">Users</a>
       </div>
+    
       <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
@@ -35,21 +35,21 @@
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
+        <tbody id="user-list">
+          <tr data-id="1">
             <td>john_doe</td>
             <td>john@example.com</td>
             <td>
-              <button class="edit-button">Edit</button>
-              <button class="delete-button">Delete</button>
+              <button class="edit-button" onclick="location.href ='edit_profile.html'">Edit</button>
+              <button class="delete-button" onclick="deleteUser(1)">Delete</button>
             </td>
           </tr>
-          <tr>
+          <tr data-id="2">
             <td>jane_doe</td>
             <td>jane@example.com</td>
             <td>
-              <button class="edit-button">Edit</button>
-              <button class="delete-button">Delete</button>
+              <button class="edit-button" onclick="location.href = 'edit_profile.html'">Edit</button>
+              <button class="delete-button" onclick="deleteUser(2)">Delete</button>
             </td>
           </tr>
           <!-- More rows can be added here -->
@@ -61,6 +61,11 @@
     function toggleMenu() {
       const navLinks = document.querySelector('.nav-links');
       navLinks.classList.toggle('show');
+    }
+
+    function deleteUser(userId) {
+      const row = document.querySelector(`tr[data-id="${userId}"]`);
+      row.remove();
     }
   </script>
 </body>
